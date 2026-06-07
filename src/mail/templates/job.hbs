@@ -1,0 +1,126 @@
+<!-- Khung nền chính bọc toàn bộ email (Thay thế cho thẻ body) -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f5f5f5; table-layout: fixed; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0;">
+    <tr>
+        <td align="center" style="padding: 30px 10px;">
+            
+            <!-- Khung nội dung Email (Giới hạn 600px để không bị vỡ trên điện thoại) -->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 5px; border-collapse: collapse;">
+                <tr>
+                    <td style="padding: 25px 25px 15px 25px;">
+                        
+                        <!-- Header -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td align="left" style="font-size: 18px; font-weight: bold; color: #333333; font-family: Arial, sans-serif;">
+                                    IT Việc
+                                </td>
+                                <td align="right" style="font-size: 14px; color: #666666; font-style: italic; font-family: Arial, sans-serif;">
+                                    Ít nhưng mà chất
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+                
+                <!-- Đường gạch ngang Solid -->
+                <tr>
+                    <td style="padding: 0 25px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-top: 1px solid #eeeeee;">
+                            <tr><td height="1" style="font-size: 1px; line-height: 1px;">&nbsp;</td></tr>
+                        </table>
+                    </td>
+                </tr>
+                
+                <!-- Lời chào (Greeting) -->
+                <tr>
+                    <td style="padding: 20px 25px 15px 25px; font-size: 15px; line-height: 1.5; color: #333333; font-family: Arial, sans-serif;">
+                        <div style="margin: 0 0 10px 0; font-weight: bold;">Hi {{receiver}},</div>
+                        <div style="margin: 0;">One of these jobs may be your next one. Find out today!</div>
+                    </td>
+                </tr>
+                
+                <!-- Đường gạch ngang Dashed -->
+                <tr>
+                    <td style="padding: 0 25px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-top: 1px dashed #cccccc;">
+                            <tr><td height="1" style="font-size: 1px; line-height: 1px;">&nbsp;</td></tr>
+                        </table>
+                    </td>
+                </tr>
+                
+                <!-- Danh sách công việc (Bạn có thể đặt vòng lặp hbs ở đây) -->
+                <tr>
+                    <td style="padding: 20px 25px 10px 25px;">
+                        {{#each jobs}}
+                        <!-- BẮT ĐẦU JOB 1 -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 25px;">
+                            <tr>
+                                <td style="font-size: 17px; font-weight: bold; padding-bottom: 5px; font-family: Arial, sans-serif;">
+                                    <a href="#" target="_blank" style="color: #0056b3; text-decoration: none;">{{name}}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 14px; color: #555555; padding-bottom: 5px; font-weight: bold; font-family: Arial, sans-serif;">
+                                    {{company}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 14px; color: #e11b22; font-weight: bold; padding-bottom: 8px; font-family: Arial, sans-serif;">
+                                    {{salary}} USD
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 15px;">
+                                    <!-- Khối kỹ năng (Skills Tags) -->
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            {{#each skills}}
+                                            <td bgcolor="#f0f0f0" style="color: #444444; font-size: 12px; padding: 4px 10px; border-radius: 3px; font-weight: bold; font-family: Arial, sans-serif;">{{this}}</td>
+                                            <td width="8"></td>
+                                            {{/each}}
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-top: 1px dashed #eeeeee; padding-top: 5px;"></td>
+                            </tr>
+                        </table>
+                        <!-- KẾT THÚC JOB 1 -->
+                        {{/each}}
+                    </td>
+                </tr>
+                
+                <!-- Footer Email -->
+                <tr>
+                    <td style="padding: 10px 25px 30px 25px;">
+                        
+                        <!-- Nút Xem Thêm kiểu Inline cho Gmail -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td align="center" bgcolor="#ea1e30" style="border-radius: 5px;">
+                                    <a href="#" target="_blank" style="font-size: 16px; font-weight: bold; color: #ffffff; text-decoration: none; display: block; padding: 12px 20px; font-family: Arial, sans-serif;">
+                                        Xem thêm job tại IT Việc
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <!-- Lời chào tạm biệt -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-top: 25px; font-size: 14px; color: #555555; line-height: 1.5;">
+                            <tr>
+                                <td style="font-family: Arial, sans-serif;">
+                                    Cheers,<br>
+                                    <strong style="color: #333333;">The ITviec Team</strong>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+            </table>
+            
+        </td>
+    </tr>
+</table>
